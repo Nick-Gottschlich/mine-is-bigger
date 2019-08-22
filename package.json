@@ -1,0 +1,11 @@
+{
+  "name": "mine-is-bigger",
+  "version": "1.0.0",
+  "description": "Ensures your z-index is always the winner",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@NickGottschlich",
+  "license": "ISC"
+}
