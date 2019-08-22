@@ -5,8 +5,13 @@ import './App.css';
 function App() {
   return (
     <div>
-      {mineIsBigger()}
-      This is a fake app to test importing the bundle and detecting z-indexes and stuff
+      <div style={{zIndex: 99}}>
+        {mineIsBigger()}
+        This is a fake app to test importing the bundle and detecting z-indexes and stuff
+      </div>
+      <div className="bigOlZIndex">
+        wus poppin
+      </div>
     </div>
   );
 }
