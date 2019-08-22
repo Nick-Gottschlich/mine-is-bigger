@@ -1,0 +1,3 @@
+const mineIsBigger = require('./');
+
+mineIsBigger()
