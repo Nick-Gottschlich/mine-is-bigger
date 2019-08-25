@@ -1,5 +1,6 @@
 import React from 'react';
 import mineIsBigger from 'mine-is-bigger';
+import './Component.css';
 
 export default class Component extends React.Component {
   state = {
@@ -15,10 +16,13 @@ export default class Component extends React.Component {
   render() {
     return (
       <div>
-        <div style={{zIndex: this.state.biggestZIndex}}>
-          This is a fake app to test importing the bundle and detecting z-indexes and stuff
-        </div>
         <div className="bigOlZIndex">
+        If you or a loved one has been diagnosed with Mesothelioma you may to be entitled to financial compensation
+        </div>
+        <div 
+          style={{zIndex: this.state.biggestZIndex}}
+          className="moreImportant"
+        >
           I am extremely important
         </div>
       </div>
