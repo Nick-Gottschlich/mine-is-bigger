@@ -14,6 +14,7 @@ export default class Component extends React.Component {
   }
 
   render() {
+    console.log('in app', this.state.biggestZIndex)
     return (
       <div>
         <div className="bigOlZIndex">

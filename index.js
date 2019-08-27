@@ -1,10 +1,10 @@
 "use strict"
 
 module.exports = function mineIsBigger() {
-  let maxZIndex = 0
+  let maxZIndexFound = 0
   
   // get all the html on the page, once everything has loaded
-  const pageSource = document.documentElement.innerHTML;
+  let pageSource = document.documentElement.innerHTML;
   
   // match z-index: 0 or more whitespace, 1 or more integers, capture the integers
   const matchedZIndices = pageSource.match(/z-index:\s*(\d+)/g);
@@ -15,10 +15,29 @@ module.exports = function mineIsBigger() {
       .split(':')[1]
       .replace(/\s/g,'')
 
-    if (zIndexValue > maxZIndex) {
-      maxZIndex = zIndexValue;
+    const castZIndexValue = +zIndexValue;
+
+    if (castZIndexValue === 2147483647) {
+      maxZIndexFound = 2147483647;
+    }
+    if (castZIndexValue > maxZIndexFound) {
+      maxZIndexFound = castZIndexValue + 1;
     };
   }
 
-  return +maxZIndex + 1;
+  // if they think they bein clever and are using the biggest possible z-index,
+  //  subtract 1 from that
+  // const matchedBiggest = /(2147483647)/g;
+  // let match;
+  // while (match = matchedBiggest.exec(pageSource)) {
+  //   const index = match.index;
+
+  //   console.log(document.documentElement.innerHTML.slice(match.index, match.index + 10))
+  //   document.documentElement.innerHTML = pageSource.slice(0, index) + '2147483646' + pageSource.slice(index + 10);
+  // }
+
+  // pageSource = document.documentElement.innerHTML;
+
+
+  return String(maxZIndexFound);
 }

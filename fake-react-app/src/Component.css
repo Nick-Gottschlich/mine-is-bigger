@@ -1,6 +1,7 @@
 .bigOlZIndex{
   z-index: 999;
-  z-index: 9999;
+  /* biggest possible z index */
+  z-index: 2147483647;
 
   position: absolute;
 }
