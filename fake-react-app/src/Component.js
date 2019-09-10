@@ -1,27 +1,35 @@
-import React from 'react';
-import mineIsBigger from 'mine-is-bigger';
-import './Component.css';
+import React from "react";
+import mineIsBigger from "mine-is-bigger";
+import "./Component.css";
 
 export default class Component extends React.Component {
   state = {
     biggestZIndex: 0
-  }
+  };
 
   componentDidMount() {
     this.setState({
       biggestZIndex: mineIsBigger()
-    })
+    });
   }
 
+  // componentDidUpdate() {
+  //   this.setState({
+  //     biggestZIndex: mineIsBigger()
+  //   });
+  // }
+
   render() {
-    console.log('in app', this.state.biggestZIndex)
+    console.log("in app", this.state.biggestZIndex);
     return (
       <div>
         <div className="bigOlZIndex">
-        If you or a loved one has been diagnosed with Mesothelioma you may to be entitled to financial compensation
+          If you or a loved one has been diagnosed with Mesothelioma you may to
+          be entitled to financial compensation
         </div>
-        <div 
-          style={{zIndex: this.state.biggestZIndex}}
+        {console.log("even closer", this.state.biggestZIndex)}
+        <div
+          style={{ zIndex: this.state.biggestZIndex }}
           className="moreImportant"
         >
           I am extremely important
@@ -29,4 +37,4 @@ export default class Component extends React.Component {
       </div>
     );
   }
-} 
+}
