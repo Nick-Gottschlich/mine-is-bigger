@@ -1,6 +1,6 @@
 {
   "name": "mine-is-bigger",
-  "version": "1.0.0",
+  "version": "4.2.0",
   "description": "Ensures your z-index is always the winner. ALWAYS BRO, ALWAYS",
   "main": "index.js",
   "scripts": {
