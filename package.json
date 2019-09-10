@@ -1,14 +1,19 @@
 {
   "name": "mine-is-bigger",
   "version": "1.0.0",
-  "description": "Ensures your z-index is always the winner",
+  "description": "Ensures your z-index is always the winner. ALWAYS BRO, ALWAYS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "@NickGottschlich",
-  "license": "ISC",
-  "dependencies": {
-    "selenium-webdriver": "^4.0.0-alpha.4"
-  }
+  "license": "MIT",
+  "repository": "https://github.com/Nick-Gottschlich/mine-is-bigger",
+  "keywords": [
+    "huge",
+    "juicy",
+    "fat",
+    "nasty",
+    "z-index"
+  ]
 }
