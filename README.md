@@ -18,39 +18,36 @@ or do `npm install mine-is-bigger` if you're one of those people.
 
 ## How to use
 
-In your React Component, adding mine-is-bigger is simple:
+In your React Component, adding `mine-is-bigger` is simple:
 
 ```javascript
-import React from "react";
+import React, { useEffect, useState } from "react";
 import mineIsBigger from "mine-is-bigger";
 
-export default class Component extends React.Component {
-  state = {
-    biggestZIndex: 0
-  };
+const BigliestComponent = () => {
+  const [zIndex, setZIndex] = useState(mineIsBigger());
 
-  componentDidMount() {
-    this.setState({
-      biggestZIndex: mineIsBigger()
-    });
-  }
+  // NEVER LET ANYONE BE BIGGER
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setZIndex(mineIsBigger());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
-  // uncomment to keep hittin em, may crash the whole app but fuck it
-  // componentDidUpdate() {
-  //   this.setState({
-  //     biggestZIndex: mineIsBigger()
-  //   });
-  // }
+  return (
+    <div style={{ zIndex }}>
+      If you or a loved one has been diagnosed with Mesothelioma you may be
+      entitled to financial compensation
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <div style={{ zIndex: this.state.biggestZIndex }}>
-        If you or a loved one has been diagnosed with Mesothelioma you may be
-        entitled to financial compensation
-      </div>
-    );
-  }
-}
+export default BigliestComponent;
 ```
 
 Not using React? Lol, what's wrong with you?
+
+## Demo
+
+https://codesandbox.io/embed/reverent-brook-evwzr
