@@ -50,7 +50,7 @@ export default BigliestComponent;
 
 ```javascript
 import React from "react";
-import useBiggestZIndex from "mine-is-bigger";
+import useBiggestZIndex from "mine-is-bigger/useBiggestZIndex";
 
 const BigliestComponent = () => {
   const zIndex = useBiggestZIndex();
