@@ -24,33 +24,22 @@ In your React Component, adding mine-is-bigger is simple:
 import React from "react";
 import mineIsBigger from "mine-is-bigger";
 
-export default class Component extends React.Component {
-  state = {
-    biggestZIndex: 0
-  };
+const BigliestComponent = () => {
+  const [zIndex, setZIndex] = useState(0);
+  useEffect(() => {
+    setZIndex(mineIsBigger())
+  }, []);
 
-  componentDidMount() {
-    this.setState({
-      biggestZIndex: mineIsBigger()
-    });
-  }
-
-  // uncomment to keep hittin em, may crash the whole app but fuck it
-  // componentDidUpdate() {
-  //   this.setState({
-  //     biggestZIndex: mineIsBigger()
-  //   });
-  // }
-
-  render() {
-    return (
-      <div style={{ zIndex: this.state.biggestZIndex }}>
+  return (
+      <div style={{ zIndex }}>
         If you or a loved one has been diagnosed with Mesothelioma you may be
         entitled to financial compensation
       </div>
     );
   }
 }
+
+export default BigliestComponent;
 ```
 
 Not using React? Lol, what's wrong with you?
