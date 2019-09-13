@@ -15,5 +15,8 @@
     "fat",
     "nasty",
     "z-index"
-  ]
+  ],
+  "dependencies": {
+    "react": "^16.9.0"
+  }
 }

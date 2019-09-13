@@ -21,8 +21,8 @@ or do `npm install mine-is-bigger` if you're one of those people.
 In your React Component, adding `mine-is-bigger` is simple:
 
 ```javascript
-import React, { useEffect, useState } from "react";
-import mineIsBigger from "mine-is-bigger";
+import React, { useEffect, useState } from 'react';
+import mineIsBigger from 'mine-is-bigger';
 
 const BigliestComponent = () => {
   const [zIndex, setZIndex] = useState(mineIsBigger());
@@ -35,6 +35,25 @@ const BigliestComponent = () => {
     return () => clearInterval(timer);
   }, []);
 
+  return (
+    <div style={{ zIndex }}>
+      If you or a loved one has been diagnosed with Mesothelioma you may be
+      entitled to financial compensation
+    </div>
+  );
+};
+
+export default BigliestComponent;
+```
+
+## HOOKS HOOKS HOOKS
+
+```javascript
+import React from "react";
+import useBiggestZIndex from "mine-is-bigger";
+
+const BigliestComponent = () => {
+  const zIndex = useBiggestZIndex();
   return (
     <div style={{ zIndex }}>
       If you or a loved one has been diagnosed with Mesothelioma you may be
