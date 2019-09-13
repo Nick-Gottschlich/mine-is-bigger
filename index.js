@@ -41,5 +41,5 @@ module.exports = function mineIsBigger() {
     pageSource = document.documentElement.innerHTML;
   }
 
-  return String(maxZIndexFound);
+  return String(maxZIndexFound + ' !important');
 };
